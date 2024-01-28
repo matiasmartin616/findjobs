@@ -4,7 +4,7 @@
 @props(['joblisting'])
     <div class="flex flex-col items-center justify-center md:flex-row md:justify-start">
         <img class="flex flex-col w-48 mr-6 md:block"
-            src="{{ $joblisting->logo ? asset('storage/'.$joblisting->logo) : asset('images/no-image.png') }}" alt="" />
+            src="{{ $joblisting->logo ? $joblisting->logo : asset('images/no-image.png') }}" alt="" />
         <div>
             <h3 class="text-xl mb-4">
                 <a class= "font-bold hover:text-gray-500" href="/joblisting/{{ $joblisting->id }}">{{ $joblisting->title }}</a>
