@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Joblisting;
 use Illuminate\Http\Request;
 use Illuminate\Validation\Rule;
+use Cloudinary\Api\Upload\UploadApi;
 
 class JoblistingController extends Controller
 {
@@ -43,7 +44,14 @@ class JoblistingController extends Controller
         ]);
 
         if (request()->hasFile('logo')){
-            $formData['logo'] = request()->file('logo')->store('logos', 'public');
+            //upload imgs to cloudinary
+            $logoRealPath = request()->file('logo')->getRealPath();
+            $uploadResponse = (new UploadApi())->upload($logoRealPath);
+
+            /* dd($uploadResponse); */
+
+            // Store the URL (or public ID) of the uploaded image in formData
+            $formData['logo'] = $uploadResponse['secure_url'];
         }
 
         $formData['user_id'] = auth()->id();
@@ -74,8 +82,15 @@ class JoblistingController extends Controller
             'description' => 'required',
         ]);
 
-        if ($request->hasFile('logo')){
-            $formData['logo'] = $request->file('logo')->store('logos', 'public');
+        if (request()->hasFile('logo')){
+            //upload imgs to cloudinary
+            $logoRealPath = request()->file('logo')->getRealPath();
+            $uploadResponse = (new UploadApi())->upload($logoRealPath);
+
+            /* dd($uploadResponse); */
+
+            // Store the URL (or public ID) of the uploaded image in formData
+            $formData['logo'] = $uploadResponse['secure_url'];
         }
 
         $joblisting->update($formData);
