@@ -1,5 +1,5 @@
 <x-layout>
-    <x-card class="p-4 sm:p-6 md:p-10 max-w-xs sm:max-w-sm md:max-w-lg mx-auto mt-24">
+    <x-card class="p-4 sm:p-6 md:p-10 max-w-xs sm:max-w-sm md:max-w-lg mx-auto mt-24" >
         <header class="text-center">
           <h2 class="text-2xl font-bold uppercase mb-1">Register</h2>
           <p class="mb-4">Create an account to add job posts</p>
