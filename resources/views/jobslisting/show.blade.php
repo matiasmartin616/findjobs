@@ -22,9 +22,10 @@
                             Job Description
                         </h3>
                         <div class="text-lg space-y-6">
-                            <p>
-                                {{ $joblisting['description'] }}
-                            </p>
+                            <p
+                            style="white-space: pre-wrap; text-align: left;"
+                            class="max-w-4xl mx-auto my-4 whitespace-pre-wrap text-left bgcolor-white"
+                            >{{ $joblisting['description'] }}</p>
 
                             <a href="mailto:{{ $joblisting['email'] }}"
                                 class="block bg-laravel text-white mt-6 py-2 rounded-xl hover:opacity-80"><i
