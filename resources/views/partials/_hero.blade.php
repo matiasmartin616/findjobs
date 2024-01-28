@@ -13,7 +13,7 @@
         <div class="mt-4">
             @auth
             @else
-            <a href="register.html" class="inline-block bg-white text-black py-2 px-4 rounded-xl uppercase font-medium hover:bg-gray-700 hover:text-white transition duration-300">Sign Up to List a Job</a>
+            <a href='/register' class="inline-block bg-white text-black py-2 px-4 rounded-xl uppercase font-medium hover:bg-gray-700 hover:text-white transition duration-300">Sign Up to List a Job</a>
             @endauth
         </div>
     </div>
