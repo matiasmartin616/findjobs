@@ -12,10 +12,12 @@ Installation
 Clone the Repository
 
 
-git clone https:[//your-repository-url.git](https://github.com/matiasmartin616/findjobs.git)
+git clone https:https://github.com/matiasmartin616/findjobs.git
+
 cd findjobs
 
 Install Composer Dependencies
+
 composer install
 
 Set Up Environment File
